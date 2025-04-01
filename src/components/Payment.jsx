@@ -6,10 +6,45 @@ const Payment = () => {
   const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
+    const currentDate = new Date();
+    const dateString = currentDate.toLocaleDateString();
+    const timeString = currentDate.toLocaleTimeString();
+    const newWindow = window.open("", "_blank", "width=600,height=400");
+    const method = document.querySelector("input[name='pay']:checked")?.value;;
+    if (newWindow) {
+      newWindow.document.write(`
+      <html>
+        <head>
+          <title>Payment Confirmation</title>
+          <style>
+            body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+            h1 { color: green; }
+            p { font-size: 1.2em; }
+            .date-time { font-size: 1.1em; color: #555; }
+            button { padding: 10px 20px; font-size: 16px; cursor: pointer; background-color: green; color: white; border: none; border-radius: 5px; }
+          </style>
+        </head>
+        <body>
+          <h1>Payment Successful!</h1>
+          <p>Thank you for your payment.</p>
+          <p class="date-time">Payment Date: ${dateString}</p>
+          <p class="date-time">Payment Time: ${timeString}</p>
+          <p class="date-time">Payment Method: ${method}</p>
+          <button onclick="window.close()">Close</button>
+        </body>
+        </html>
+      `);
+      newWindow.document.close();
+    } else {
+      alert("Popup blocked! Please allow popups for this site.");
+    }
+
+    // Simulate redirect with delay
     setTimeout(() => {
       navigate("/", { state: { message: "Payment Successful!" } });
     }, 2000);
   };
+
   return (
     <section className="section-payment">
       <div className="main-container">
@@ -22,7 +57,7 @@ const Payment = () => {
             <br />
             <br />
             <label className="options">
-              <input type="radio" name="pay" id="upi" />
+              <input type="radio" name="pay" id="upi" value="UPI" />
               UPI
               <svg
                 className="end-align"
@@ -80,7 +115,7 @@ const Payment = () => {
 
             <br />
             <label className="options">
-              <input type="radio" name="pay" id="card" /> Card
+              <input type="radio" name="pay" id="card" value="Card"/> Card
               <svg
                 className="end-align"
                 fill="#45260a"
@@ -106,7 +141,7 @@ const Payment = () => {
             </label>
             <br />
             <label className="options">
-              <input type="radio" name="pay" id="inetbnk" /> Internet Banking
+              <input type="radio" name="pay" id="inetbnk" value="Internet Banking" /> Internet Banking
               <svg
                 className="end-align"
                 width="32px"
@@ -155,7 +190,10 @@ const Payment = () => {
                 className="cart-btn chkout"
                 type="submit"
                 value="Checkout"
-                onClick={handleSubmit}
+                onClick={() => {
+                  handleSubmit(event);
+                  window.open("_blank", "width=600,height=400");
+                }}
               />
             </div>
           </form>
