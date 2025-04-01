@@ -82,8 +82,10 @@ const App = () => {
     Array.from(products)?.map((p) => (totalProds += p?.qty));
     if (totalProds) {
       setEmptyCart(false);
+      console.log(emptyCart);
     } else {
       setEmptyCart(true);
+      console.log(emptyCart);
     }
   }, [products]);
 

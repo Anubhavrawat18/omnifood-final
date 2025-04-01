@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Layout from "./Layout";
 import Signup from "./components/Signup";
 import Cart from "./components/Cart";
-import "./App.css";
 import Login from "./components/Login";
 import Payment from "./components/Payment";
 
