@@ -53,7 +53,7 @@ function Footer() {
             <p className="footer-heading">Contact us</p>
             <address className="contacts">
               <p className="address">
-                Address: 623 Harrison St., 2nd Floor, San Francisco, CA 94107
+                Address: Chennai, Tamil Nadu, India, 390012
               </p>
               <p>
                 <a className="footer-link" href="tel:415-201-6370">

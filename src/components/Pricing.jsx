@@ -2,6 +2,7 @@ import React from "react";
 import "./styles.css";
 import "./queries.css";
 import "./general.css";
+import { Link } from "react-router-dom";
 
 function Pricing() {
   return (
@@ -42,9 +43,9 @@ function Pricing() {
               </li>
             </ul>
             <div class="plan-sign-up">
-              <a href="#" class="btn btn--full">
+              <Link to="/signup" class="btn btn--full">
                 Start eating well
-              </a>
+              </Link>
             </div>
           </div>
           <div class="pricing-plan pricing-plan--complete">
@@ -78,9 +79,9 @@ function Pricing() {
               </li>
             </ul>
             <div class="plan-sign-up">
-              <a href="#" class="btn btn--full">
+              <Link to="/signup" class="btn btn--full">
                 Start eating well
-              </a>
+              </Link>
             </div>
           </div>
         </div>
