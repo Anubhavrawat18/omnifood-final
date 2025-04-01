@@ -1,0 +1,299 @@
+/*
+
+TYPOGRAPHY SYSTEM
+
+
+FONT WEIGHTS: 400(default)
+500(medium)
+600(semi-bold)
+700(bold)
+
+LINE HEIGHT: 1(by default)
+1.05(small)
+1.6(paragraph default)
+1.2(secondary-headings)
+
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+
+COLORS
+
+--MAIN COLOR: #e67e22
+--SHADES: #cf711f
+--TINTS: #fdf2e9
+--ACCENT: 
+--GREYS:#888
+#767676 (lightest grey allowed on #fff)
+#6f6f6f (lightest grey allowed on #fdf2e9
+#555 
+#333
+
+--SHADOWS:
+
+--BORDER RADIUS: 9px(default) 11px(in cards, medium size)
+
+
+--LINE SPACING:
+-0.5px
+0.75px
+/* 
+
+
+
+/* Global Reset */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 10px; */
+  /* we do this in percentage for a more dynamic layout */
+  /* for example if you want equivalent of 10px, you can do it as
+         10px(required)/16px(default) = 0.625 = 62.5% */
+  font-size: 62.5%;
+
+  overflow-x: hidden;
+}
+
+body {
+  color: #555;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  overflow-x: hidden;
+
+  /* only works when there is nothing hidden in relation to  */
+}
+
+/* ************************** */
+/* GENERAL REUSABLE COMPONENTS */
+/* ************************** */
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 700;
+  color: #333;
+  /* color: #2e1907; */
+  letter-spacing: -0.5px;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+.subheading {
+  display: block;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #cf711f;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.75px;
+}
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.6rem 3.2rem;
+  text-decoration: none;
+  border-radius: 9px;
+
+  /* only necessary for .btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  /* but the transition from the normal color to the hover color is very sudden */
+  /* so to have a smoother transition we use a transition property and pass the properties we want the transition to apply on and then the time we want the transition to take (in s or in ms) */
+  /* transition: all 1s; */
+  /* or */
+  /* transition: background-color 0.3s; */
+  /* transition: background-color, box-shadow 0.3s; */
+  transition: all 0.3s;
+}
+
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.2rem;
+  /* we dont care about the padding on the sides as the padding on the sides will not play a role and the item will be stretched to fit the grid cell as by default it is set to stretch */
+}
+
+.btn--form:hover {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #e67e22;
+  color: #fff;
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #cf711f;
+  /* background-color: red; */
+  color: #fff;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fdf2e9;
+
+  /* border: 3px solid #fff; */
+  /* but if you use this, the entire box contents jump up  and so,  we use another method*/
+
+  /* TRICK--to use inset shadow and that is used as */
+  /* box-shadow: inset <set to 0> <set to 0> <set to 0> <set border width> <border color>; */
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+/* for reusability we made a helper class to add space between elements to the right */
+
+/* GENERIC CONTAINER FOR CENTERING A CONTAINER */
+.container {
+  /* 1140px */
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+/* HOW TO MAKE A REUSABLE GRID */
+
+.grid {
+  display: grid;
+  row-gap: 9.6rem;
+  column-gap: 6.4rem;
+
+  margin-bottom: 9.6rem;
+}
+
+.grid:last-child {
+  margin-bottom: 0;
+}
+
+/* .grid :not(:last-child) {
+    margin-bottom: 9.6rem;
+  } */
+
+.grid--2--cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--3--cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4--cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid--5--cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.grid--centre-v {
+  align-items: center;
+}
+
+/* AND THEN PUT THE SUITABLE GRID CLASSES AS PER YOUR USE CASE */
+
+.link:link,
+.link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #e67e22;
+  padding-bottom: 2px;
+  border-bottom: 2px solid currentColor;
+  /* important keyword, uses the current text color for the underline */
+  transition: all 300ms;
+}
+
+.link:hover,
+.link:active {
+  color: #cf711f;
+  border-bottom: 2px solid transparent;
+  /* very important keyword TRANSPARENT...does not cause any shift in pixels while you hover and also makes it seem as if there are no borders */
+}
+
+/* HELPER/ SETTINGS CLASSES */
+
+/* redefining font-weight of <strong> tag */
+
+*:focus {
+  outline: none;
+  /* outline: 4px dotted #e67e22;
+    outline-offset: 8px; */
+  /* or use box-shadow */
+  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
+}
+
+strong {
+  font-weight: 500;
+}
+
+.centre-text {
+  text-align: center;
+}
+
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+  /* important keyword makes sure that this property is applied */
+}
+
+.margin-bottom-md {
+  margin-bottom: 4.8rem;
+}
+
+/* LISTS */
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-icon {
+  color: #e67e22;
+  width: 3rem;
+  height: 3rem;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  gap: 1.6rem;
+  line-height: 1.2;
+}

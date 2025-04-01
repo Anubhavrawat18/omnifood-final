@@ -1,0 +1,70 @@
+.section-login {
+  display: flex;
+  background-color: #fdf2e9;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.main-div {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.login-form {
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+}
+.login-form label {
+  font-size: 1.6rem;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 1.2rem;
+}
+.login-form input,
+.login-form select {
+  width: 100%;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  background-color: #fdf2e9;
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.login-form input::placeholder {
+  color: #aaa;
+}
+.login-container {
+  background-color: #e67e22;
+  border-radius: 15px;
+  padding: 3.6rem;
+  box-sizing: border-box;
+  display: inline-block;
+}
+.login-btn {
+  width: 19vw;
+}
+
+.less-margin {
+  margin-bottom: 2.4rem;
+}
+
+.main-div {
+  margin-top: -1.6rem;
+}
+
+.inputs {
+  font-size: 2.4rem !important;
+}
+
+.small-text {
+  font-size: 1.4rem;
+}

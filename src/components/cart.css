@@ -1,0 +1,151 @@
+.card-img {
+  height: 300px;
+  width: 300px;
+}
+
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 700;
+  color: #333;
+  /* color: #2e1907; */
+  letter-spacing: -0.5px;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  line-height: 1.05;
+  margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.heading-tertiary {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+
+.top-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3.2rem;
+}
+.prods {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 3.2rem;
+  padding: 3.2rem;
+}
+
+.prodCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3.2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  background-color: #fdf2e9;
+}
+.main_cont {
+  background-color: #fae5d3;
+  height: 350vh;
+}
+
+.tot {
+  background-color: #fdf2e9;
+}
+
+.detail-text {
+  font-size: 2.4rem;
+}
+
+.cartBtn {
+  border: none;
+  font-size: 2rem;
+  padding: 1.2rem 2.4rem;
+  color: #fff;
+  background-color: #45260a;
+  border-radius: 10px;
+  margin-top: 2.4rem;
+  margin-bottom: 4.8rem;
+}
+
+.prodInfo {
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2.4rem;
+}
+
+.resCart {
+  border: none;
+  border-radius: 10px;
+  background-color: #45260a;
+  color: #fff;
+  padding: 3rem 2.4rem;
+  margin-bottom: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.4rem;
+}
+
+.proceed-btn {
+  border: none;
+  border-radius: 10px;
+  background-color: #45260a;
+  color: #fff;
+  padding: 3rem 2.4rem;
+  margin-bottom: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.4rem;
+  text-decoration: none;
+}
+
+.summary_text {
+  font-size: 2.6rem;
+}
+
+.remCart,
+.addCart {
+  border: none;
+  border-radius: 5px;
+  background-color: #f8be8a;
+  width: 2.4rem;
+  color: #fff;
+  margin-bottom: 6rem;
+  font-size: 2.4rem;
+}
+
+.singleProducts {
+  margin-left: 100px;
+}
+
+.summary_text {
+  margin-left: 100px;
+}
+
+.top-text {
+  margin-top: 60px;
+}
+
+.blocks {
+  display: block !important;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 90vw;
+  height: 10vh;
+  padding-top: 3rem;
+  gap: 15rem;
+}
